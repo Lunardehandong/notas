@@ -35,3 +35,47 @@ WHEN 1 THEN (SELECT SUM(vd.VD_Cantidad) from ventas_detalle vd where vd.vd_ProdI
 WHEN 2 THEN 'Otro estado'
 END
 AS Estado from productos p
+
+select 
+p.Prod_ID, p.Prod_Descripcion, 
+Case p.Prod_Status
+WHEN 0 THEN 'Deshabilitado'
+WHEN 1 THEN IFNULL(SELECT SUM(vd.VD_Cantidad) from ventas_detalle vd where vd.vd_ProdId=p.Prod_ID,0)
+WHEN 2 THEN 'Otro estado'
+END
+AS Estado from productos p
+
+Select p.Prod_Id, p.prod_Descripcion, Case SUBSTR(p.Prod_Descripcion,1,1)
+When 'A' THEN 'Letra A'
+When 'B' THEN 'Letra B'
+END AS ejercicio
+From productos p
+
+función de la fecha
+Select current_date;
+
+función para la hora.
+Select current_time;
+
+selección para ambas
+select current_Timestamp;
+
+para ver la base de datos 
+select database()
+
+para seleccionar el usuario
+
+select current_User
+
+función para contar días
+select datediff('2023-06-25','2023-01-01') as 'Dias desde comienzo del año'
+
+
+las podemos mezclar para comparar fechas pasadas con las actuales
+
+Select datediff(current_date, v.Ventas_Fecha) as 'antigüedad en días'. 
+v.Ventas_Nrofactura from ventas v
+
+función para ver el dia de la semana
+
+select dayofweek(current_date as 'dia de la semana'
