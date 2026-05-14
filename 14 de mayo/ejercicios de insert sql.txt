@@ -1,0 +1,25 @@
+ejercicios de insert sql
+//insertar solamente
+insert productos (Prod_Descricion, Prod_Color) values
+('mi producto','mi color')
+
+insertar con id (debe dar error)
+insert productos (Prod_Id Prod_Descricion, Prod_Color) values
+(6995 'mi producto','mi color')
+
+//insertar un id que ya había sido borrado
+insertar con id (debe dar error)
+insert productos (Prod_Id Prod_Descricion, Prod_Color) values
+(6992 'mi producto','mi color')
+
+insertar con id (debe dar error)
+insert productos (Prod_Id Prod_Descricion, Prod_Color, Prod_proId) values
+(6993 'mi producto','mi color' 9)
+
+//multi insert
+insert productos (Prod_Descricion, Prod_Color) values
+('mi producto','mi color'),
+('mi producto','mi color'),
+('mi producto','mi color'),
+('mi producto','mi color'),
+('mi producto','mi color')
