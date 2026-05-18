@@ -1,0 +1,9 @@
+consultas sobre el select
+
+select Ventas_Fecha, Ventas_NroFactura, Ventas_Total from ventas 
+
+select ventas_id ventas_cantidad, ventas_precio where ventas_precio >0 
+
+select Ventas_fecha as fechas, sum(ventas_total) as 'total vendido'
+from ventas
+group by fecha
